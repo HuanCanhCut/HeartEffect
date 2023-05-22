@@ -86,8 +86,11 @@ body {
     border: 2px solid rgba(0, 255, 21, 0.8);
     border-radius: 12px;
     outline: none;
-    padding: 15px 10px 6px 12px;
+    padding: 12px 10px;
     box-sizing: border-box;
+}
+.form-group .form-control:placeholder {
+    font-size: 0.9rem;
 }
 
 .form-control:hover,
