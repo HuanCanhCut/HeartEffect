@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- <script src="devtools.js"></script> -->
+    </head>
+    <body>
+        <div class="main">
+            <form action="http://127.0.0.1:8080/proxy/5500//MyProject/src/main/index.html" method="POST" class="form" id="register-form">
+                <h1 class="heading">Login</h1>
+                <p class="title">❤️ By Shy Programmer HuanPenguin ❤️</p>
+                <div class="spacer"></div>
+                <div class="form-group">
+                    <label for="username" class="form-label">User Name</label>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Username: Lan Anh" />
+                    <span style="margin-top: 10px" class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password: Lanh261205" />
+                    <span class="form-message"></span>
+                </div>
+
+                <button class="form-submit">Submit</button>
+            </form>
+        </div>
+        <script src="./main.js"></script>
+        <script>
+            Validator({
+                form: '#register-form',
+                rules: [
+                    Validator.isRequired('#username'), //
+                    Validator.isUsername('#username', function () {
+                        return 'lan anh'
+                    }),
+                    Validator.isRequired('#password'),
+                    Validator.isPassword('#password', function () {
+                        return 'lanh261205'
+                    }),
+                ],
+                submit: function (data) {
+                    console.log(data)
+                },
+            })
+        </script>
+        <script>
+            function notification() {
+                alert(`
+Login Thành Công Rồi 👉🏾👈🏻 . Đến Với Nhân Vật Chính Thôi Nào!
+
+Warning ⚠️⚠️
+ "Xin Thí Chủ Lưu Ý, Sau Khi Login Xong Web Sẽ Tự Bật Nhạc Và Thằng "Huấn" Nó Chưa Làm Chức Năng Tắt Đi :)) . Nếu Thí Chủ Thấy Nhạc Gây Ảnh Hưởng Vui Lòng  Tắt Âm Lượng Và Trải Nghiệm ❤️ 👉🏾👈🏻" 
+                `)
+            }
+            function navigation() {
+                location.assign('http://127.0.0.1:8080/proxy/5500//MyProject/src/main/index.html')
+            }
+        </script>
+    </body>
+</html>
