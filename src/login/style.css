@@ -89,9 +89,7 @@ body {
     padding: 12px 10px 10px 12px;
     box-sizing: border-box;
 }
-.form-group .form-control:placeholder {
-    font-size: 0.9rem;
-}
+
 
 .form-control:hover,
 .form-control:active {
