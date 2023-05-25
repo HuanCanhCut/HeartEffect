@@ -66,18 +66,20 @@ if (autoRotate) {
 
 // add background music
 let audio = document.querySelector('.audio')
-let musicContainer = document.getElementById('music-container')
-let body = document.querySelector('body')
-document.onclick = function () {
-  audio.play()
-}
+let musicContainer = document.querySelector('.music-container')
+let musicPlay = true
 
-body.onload = function() {
-  audio.play()
-}
-
+//? Handled when click music btn
 musicContainer.onclick = function () {
-    audio.play()
+    if (musicPlay === true) {
+        musicContainer.classList.add('playing')
+        audio.play()
+        musicPlay = false
+    } else {
+        musicContainer.classList.remove('playing')
+        audio.pause()
+        musicPlay = true
+    }
 }
 
 if (bgMusicURL) {
@@ -86,8 +88,7 @@ if (bgMusicURL) {
 <p>If you are reading this, it is because your browser does not support the audio element.</p>
 </audio>
 `
-} 
-// play music
+}
 
 // setup events
 document.onpointerdown = function (e) {
@@ -418,5 +419,3 @@ function draw() {
 }
 
 draw()
-
-
