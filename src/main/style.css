@@ -107,7 +107,7 @@ body {
 #music-container .music-icon {
     position: absolute;
     color: white;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 #music-container .icon-pause {
     display: none;
