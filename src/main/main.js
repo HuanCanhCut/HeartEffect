@@ -64,7 +64,7 @@ if (autoRotate) {
     ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`
 }
 
-// add background music
+//? get Music Element
 let audio = document.querySelector('.audio')
 let musicContainer = document.querySelector('.music-container')
 let musicPlay = true
