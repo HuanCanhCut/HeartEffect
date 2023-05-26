@@ -95,7 +95,7 @@ Validator.isUsername = function (selector, getConfirmValue) {
     return {
         selector: selector,
         test: function (value) {
-            return value.toLowerCase() === getConfirmValue() ? undefined : 'Username khong dung!'
+            return value.toLowerCase().trim() === getConfirmValue() ? undefined : 'Username khong dung!'
         },
     }
 }
@@ -104,7 +104,7 @@ Validator.isPassword = function (selector, getConfirmValue) {
     return {
         selector: selector,
         test: function (value) {
-            return value.toLowerCase() === getConfirmValue() ? undefined : 'Password khong dung!'
+            return value.toLowerCase().trim() === getConfirmValue() ? undefined : 'Password khong dung!'
         },
     }
 }
