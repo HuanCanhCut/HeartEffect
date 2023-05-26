@@ -29,8 +29,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url('./img/background_form.jpg'); */
-    background-image: url('../../img/LANH7.webp');
+    background-image: url('../../img/background_form.webp');
+    /* background-image: url('../../img/LANH7.webp'); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -42,7 +42,7 @@ body {
     border-radius: 20px;
     border: 1px cyan solid;
     /* box-shadow: 0px 0px 100px 20px #0e0e0e; */
-    backdrop-filter: brightness(50%);
+    backdrop-filter: blur(4px) brightness(95%);
     box-sizing: border-box;
 }
 
@@ -86,10 +86,35 @@ body {
     border: 2px solid rgba(0, 255, 21, 0.8);
     border-radius: 12px;
     outline: none;
-    padding: 12px 10px 10px 12px;
+    padding: 12px 10px 8px 12px;
     box-sizing: border-box;
 }
 
+.password-hide {
+    position: absolute;
+    top: 10%;
+    right: 4%;
+    width: 10%;
+    height: 15%;
+}
+
+.form-group .password__icon {
+    position: absolute;
+    top: 12%;
+    right: 4%;
+}
+
+.form-group .password__icon--enable {
+    display: none;
+}
+
+.password-hide.hide .password__icon--disable {
+    display: none;
+}
+
+.password-hide.hide .password__icon--enable {
+    display: inline-block;
+}
 
 .form-control:hover,
 .form-control:active {
@@ -98,6 +123,15 @@ body {
 
 .form-group.invalid .form-label {
     background: rgb(255, 0, 195);
+}
+
+.form-group.invalid .password__icon {
+    position: absolute;
+    top: 10.2%;
+}
+.form-group.invalid .password-hide {
+    position: absolute;
+    top: 8.5%;
 }
 
 .form-group.invalid .form-control {
