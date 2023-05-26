@@ -42,7 +42,7 @@ body {
     border-radius: 20px;
     border: 1px cyan solid;
     /* box-shadow: 0px 0px 100px 20px #0e0e0e; */
-    backdrop-filter: blur(4px) brightness(95%);
+    backdrop-filter: blur(1px) brightness(95%);
     box-sizing: border-box;
 }
 
