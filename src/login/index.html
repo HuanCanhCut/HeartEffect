@@ -6,22 +6,34 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Document</title>
         <link rel="stylesheet" href="style.css" />
-        <!-- <script src="devtools.js"></script> -->
+        <link rel="stylesheet" href="../../fontawesome-6.4.0/css/all.min.css" />
+        <script src="../login/devtools.js"></script>
     </head>
     <body>
         <div class="main">
             <form action="http://127.0.0.1:8080/proxy/5500//MyProject/src/main/index.html" method="POST" class="form" id="register-form">
                 <h1 class="heading">Login</h1>
-                <p class="title">❤️ By Shy Programmer HuanPenguin ❤️</p>
+                <p class="title">By Shy Programmer HuanPenguin</p>
                 <div class="spacer"></div>
                 <div class="form-group">
                     <label for="username" class="form-label">User Name</label>
-                    <input type="text" name="username" id="username" class="form-control"/>
+
+                    <div>
+                        <div>
+                            <input type="text" name="username" id="username" class="form-control" />
+                        </div>
+                    </div>
+
                     <span style="margin-top: 10px" class="form-message"></span>
                 </div>
                 <div class="form-group">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control"  />
+                    <input type="password" name="password" id="password" class="form-control" />
+
+                    <div class="password-hide">
+                        <i class="fas fa-eye password__icon password__icon--enable"></i>
+                        <i class="fas fa-eye-slash password__icon password__icon--disable"></i>
+                    </div>
                     <span class="form-message"></span>
                 </div>
 
@@ -32,33 +44,30 @@
         <script>
             Validator({
                 form: '#register-form',
+                errorSelector: '.form-message',
+                formGroup: '.form-group',
+
                 rules: [
                     Validator.isRequired('#username'), //
                     Validator.isUsername('#username', function () {
-                        return 'Lan Anh'
+                        return 'lan anh'
                     }),
                     Validator.isRequired('#password'),
                     Validator.isPassword('#password', function () {
-                        return 'Lanh261205'
+                        return 'lanh261205'
                     }),
                 ],
-                submit: function (data) {
-                    console.log(data)
-                },
+                submit: function () {},
             })
         </script>
         <script>
-           
-            function notification() {
-                alert(`
-Login Success 👉🏾👈🏻 . Đến Với Nhân Vật Chính Thôi Nào!
+            const admin = 'Huấn'
 
-Warning ⚠️⚠️ :
- "Xin Thí Chủ Lưu Ý, Sau Khi Login Xong Web Sẽ Tự Bật Nhạc Và Thằng "Admin : HPenguin" Nó Chưa Làm Chức Năng Tắt Đi :)) . Nếu Thí Chủ Thấy Nhạc Gây Ảnh Hưởng Vui Lòng Tắt Âm Lượng Và Trải Nghiệm ❤️ 👉🏾👈🏻" 
-                `)
+            function notification() {
+                alert(` Login Success. 👉🏾 Đến Với Nhân Vật Chính Thôi Nào ❤️❤️ 👈🏻`)
             }
             function navigation() {
-                location.assign('https://huanpenguin.github.io/LA/src/main/index.html')
+                location.assign('http://127.0.0.1:8080/proxy/5500//MyProject/src/main/index.html')
             }
         </script>
     </body>
