@@ -1,9 +1,37 @@
+//? password icon hide
+let passwordHide = document.querySelector('.password-hide')
+let iconHide = true
+let passwordFiled = document.querySelector('#password')
+
+passwordHide.onclick = function () {
+    if (iconHide) {
+        passwordHide.classList.add('hide')
+        iconHide = false
+        passwordFiled.setAttribute('type', 'text')
+    } else {
+        passwordHide.classList.remove('hide')
+        iconHide = true
+        passwordFiled.setAttribute('type', 'password')
+    }
+}
+
 function Validator(options) {
     let formElement = document.querySelector(options.form)
     let selectorRules = {}
+
+    function getParentElement(element, selector) {
+        while (element.parentElement) {
+            if (element.parentElement.matches(selector)) {
+                return element.parentElement
+            }
+            element = element.parentElement
+        }
+    }
+
     if (formElement) {
+        //? function invalid
         function invalid(inputElement, rule) {
-            let errorElement = inputElement.parentElement.querySelector('.form-message')
+            let errorElement = getParentElement(inputElement, options.formGroup).querySelector(options.errorSelector)
             let errorMessage
 
             let rules = selectorRules[rule.selector]
@@ -16,16 +44,16 @@ function Validator(options) {
 
             if (errorMessage) {
                 errorElement.innerText = errorMessage
-                errorElement.parentElement.classList.add('invalid')
+                getParentElement(inputElement, options.formGroup).classList.add('invalid')
             } else {
                 errorElement.innerText = ''
-                errorElement.parentElement.classList.remove('invalid')
+                getParentElement(inputElement, options.formGroup).classList.remove('invalid')
             }
 
             //? input handled
             inputElement.oninput = function () {
                 errorElement.innerText = ''
-                errorElement.parentElement.classList.remove('invalid')
+                getParentElement(inputElement, options.formGroup).classList.remove('invalid')
             }
             return !errorMessage
         }
@@ -48,18 +76,10 @@ function Validator(options) {
             if (isFormValid) {
                 //? submit with javascript
                 if (typeof options.submit === 'function') {
-                    let enableInput = document.querySelectorAll('[name]:not([content])')
-                    //? nodeList convert to array
-                    var formValue = Array.from(enableInput).reduce(function (values, input) {
-                        return (values[input.name] = input.value) && values
-                    }, {})
                     notification()
                     navigation()
-                    options.submit(formValue)
-                }
-                //? submit with HTML
-                else {
-                    formElement.submit()
+                } else {
+                    form.submit()
                 }
             }
         }
@@ -95,7 +115,7 @@ Validator.isUsername = function (selector, getConfirmValue) {
     return {
         selector: selector,
         test: function (value) {
-            return value.toLowerCase() === getConfirmValue() ? undefined : 'Username khong dung!'
+            return value.trim().toLowerCase() === getConfirmValue() ? undefined : 'Username khong dung!'
         },
     }
 }
@@ -104,7 +124,7 @@ Validator.isPassword = function (selector, getConfirmValue) {
     return {
         selector: selector,
         test: function (value) {
-            return value.toLowerCase() === getConfirmValue() ? undefined : 'Password khong dung!'
+            return value.trim().toLowerCase() === getConfirmValue() ? undefined : 'Password Khong Dung!'
         },
     }
 }
