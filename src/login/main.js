@@ -106,7 +106,7 @@ Validator.isRequired = function (selector) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim() ? undefined : 'Vui long nhap truong nay!'
+            return value.trim() ? undefined : 'Vui Lòng Nhập Trường Này!'
         },
     }
 }
@@ -115,7 +115,7 @@ Validator.isUsername = function (selector, getConfirmValue) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim().toLowerCase() === getConfirmValue() ? undefined : 'Username khong dung!'
+            return value.trim().toLowerCase() === getConfirmValue() ? undefined : 'Username Không Đúng!'
         },
     }
 }
@@ -124,7 +124,7 @@ Validator.isPassword = function (selector, getConfirmValue) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim().toLowerCase() === getConfirmValue() ? undefined : 'Password Khong Dung!'
+            return value.trim().toLowerCase() === getConfirmValue() ? undefined : 'Password Không Đúng!'
         },
     }
 }
