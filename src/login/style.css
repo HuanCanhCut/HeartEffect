@@ -31,8 +31,8 @@ body {
     align-items: center;
     background-image: url('../../img/LANH7.webp');
     /* background-image: url('../../img/LANH7.webp'); */
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat-X;
 }
 
 .form {
