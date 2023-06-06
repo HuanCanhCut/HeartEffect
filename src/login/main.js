@@ -76,7 +76,7 @@ function Validator(options) {
             if (isFormValid) {
                 //? submit with javascript
                 if (typeof options.submit === 'function') {
-                    notification()
+                    
                     navigation()
                 } else {
                     form.submit()
