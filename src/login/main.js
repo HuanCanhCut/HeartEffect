@@ -1,7 +1,7 @@
-function noti () {
-   alert('Xin thí chủ lưu ý, do thằng Dev code còn gà nên hiện tại để có được trải nghiệm tốt nhất, thí chủ vui lòng truy cập trang web trên điện thoại! Truy cập bằng máy tính sẽ bị vỡ giao diện')
-}
-noti()
+
+alert('Xin thí chủ lưu ý, do thằng Dev code còn gà nên hiện tại để có được trải nghiệm tốt nhất, thí chủ vui lòng truy cập trang web trên điện thoại! Truy cập bằng máy tính sẽ bị vỡ giao diện')
+
+
 
 //? password icon hide
 let passwordHide = document.querySelector('.password-hide')
