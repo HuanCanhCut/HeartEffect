@@ -1,5 +1,8 @@
 
-alert('Xin thí chủ lưu ý, do thằng Dev code còn gà nên hiện tại để có được trải nghiệm tốt nhất, thí chủ vui lòng truy cập trang web trên điện thoại! Truy cập bằng máy tính sẽ bị vỡ giao diện')
+alert(`
+Xin Thí Chủ lưu ý, do thằng Dev code còn gà nên hiện tại để có được trải nghiệm tốt nhất, Thí Chủ vui lòng truy cập trang web trên điện thoại! Truy cập bằng máy tính sẽ bị vỡ giao diện
+...Ờmmm mặc dù tui không biết nó có reponsive tốt với đa màn hình điện thoại không nhưng tui chắc nó ổn hơn khi truy cập bằng điện thoại ( Trừ cái cốc cốc trên điện thoại, nó lỏ bome )
+`)
 
 
 
