@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 :root {
     --background: linear-gradient(135deg, #a200ff, #0015ff);
     --button: linear-gradient(45deg, rgb(0, 221, 255), rgb(0, 255, 21));
-    --text-color: #fff;
+    --text-color: #ffffff;
     --success: #00ddff;
     --error: #ff0000;
+    --color: #;
 }
 
 html,
@@ -12,37 +13,14 @@ body {
     padding: 0;
     margin: 0;
     width: 100vw;
-    height: 100vh;
-    /* background-image: var(--background); */
+    height: 100%;
+    min-height: 100vh;
     background-image: linear-gradient(135deg, gray, black);
     color: var(--text-color);
-    font-family: 'Poppins';
+    font-family: 'Bagel Fat One', cursive;
 }
 
 * {
-    box-sizing: border-box;
-}
-
-.main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../../img/LANH7.webp');
-    /* background-image: url('../../img/LANH7.webp'); */
-    background-size: contain;
-    background-repeat: repeat-X;
-}
-
-.form {
-    width: 70%;
-    padding: 20px 50px 40px 40px;
-    text-align: center;
-    border-radius: 20px;
-    border: 1px cyan solid;
-    /* box-shadow: 0px 0px 100px 20px #0e0e0e; */
-    backdrop-filter: brightness(95%);
     box-sizing: border-box;
 }
 
@@ -51,119 +29,150 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 800;
+    font-weight: 400;
+    font-family: 'Bagel Fat One', cursive !important;
 }
 
-.title {
-    font-size: 0.9em;
-    color: #ff4d88;
-}
+@media screen and (max-width: 1080px) {
+    .main {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('../../img/LANH7.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-.form .form-group {
-    width: 100%;
-    text-align: left;
-    padding-bottom: 80px;
-    position: relative;
-}
+    .form {
+        width: 70%;
+        padding: 20px 50px 40px 40px;
+        text-align: center;
+        border-radius: 20px;
+        border: 1px cyan solid;
+        /* box-shadow: 0px 0px 100px 20px #0e0e0e; */
+        backdrop-filter: brightness(80%);
+        box-sizing: border-box;
+    }
 
-.form-group .form-label {
-    font-size: 0.9rem;
-    /* prettier-ignore */
-    background-image: linear-gradient(45deg, rgb(0, 221, 255), rgb(0, 255, 153) ) ;
-    color: black;
-    border-radius: 5px;
-    padding: 0 8px;
-    position: absolute;
-    top: -10px;
-    left: 15px;
-    font-weight: 600;
-}
+    .title {
+        font-size: 0.9em;
+        font-family: 'Bagel Fat One' cursive !important;
+        font-weight: 300;
+    }
 
-.form-group .form-control {
-    width: 100%;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    background: none;
-    border: 2px solid rgba(0, 255, 21, 0.8);
-    border-radius: 12px;
-    outline: none;
-    padding: 12px 10px 8px 12px;
-    box-sizing: border-box;
-}
+    .form .form-group {
+        width: 100%;
+        text-align: left;
+        padding-bottom: 80px;
+        position: relative;
+    }
 
-.password-hide {
-    position: absolute;
-    top: 10%;
-    right: 4%;
-    width: 10%;
-    height: 15%;
-}
+    .form-group .form-label {
+        font-size: 0.9rem;
+        /* prettier-ignore */
+        background-image: linear-gradient(45deg, rgb(0, 221, 255), rgb(0, 255, 153) ) ;
+        color: black;
+        border-radius: 5px;
+        padding: 0 8px;
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        font-family: 'Bagel Fat One' cursive !important;
+        font-weight: 200;
+    }
 
-.form-group .password__icon {
-    position: absolute;
-    top: 12%;
-    right: 4%;
-}
+    .form-group .form-control {
+        width: 100%;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        background: none;
+        border: 2px solid rgba(0, 255, 21, 0.8);
+        border-radius: 12px;
+        outline: none;
+        padding: 12px 10px 8px 12px;
+        box-sizing: border-box;
+    }
 
-.form-group .password__icon--enable {
-    display: none;
-}
+    .password-hide {
+        position: absolute;
+        top: 10%;
+        right: 4%;
+        width: 10%;
+        height: 15%;
+    }
 
-.password-hide.hide .password__icon--disable {
-    display: none;
-}
+    .form-group .password__icon {
+        position: absolute;
+        top: 12%;
+        right: 4%;
+    }
 
-.password-hide.hide .password__icon--enable {
-    display: inline-block;
-}
+    .form-group .password__icon--enable {
+        display: none;
+    }
 
-.form-control:hover,
-.form-control:active {
-    border: 2px solid var(--success);
-}
+    .password-hide.hide .password__icon--disable {
+        display: none;
+    }
 
-.form-group.invalid .form-label {
-    background: rgb(255, 0, 195);
-}
+    .password-hide.hide .password__icon--enable {
+        display: inline-block;
+    }
 
-.form-group.invalid .password__icon {
-    position: absolute;
-    top: 10.2%;
-}
-.form-group.invalid .password-hide {
-    position: absolute;
-    top: 8.5%;
-}
+    .form-control:hover,
+    .form-control:active {
+        border: 2px solid var(--success);
+    }
 
-.form-group.invalid .form-control {
-    border: 2px solid red;
-}
-.form-group.invalid .form-message {
-    color: red;
-    font-size: 1rem;
-}
+    .form-group.invalid .form-label {
+        background: rgb(255, 0, 195);
+    }
 
-.form-submit {
-    margin-top: -20px;
-    width: 70%;
-    height: 60px;
-    font-size: 1.2rem;
-    background: var(--button);
-    border-radius: 40px;
-    border: 1.5px black solid;
-    color: black;
-    cursor: pointer;
-    box-shadow: 0 6px 0 rgb(39, 170, 190);
-    transition: 0.1s linear;
-    outline: none;
-    font-weight: 600;
-}
+    .form-group.invalid .password__icon {
+        position: absolute;
+        top: 10.2%;
+    }
+    .form-group.invalid .password-hide {
+        position: absolute;
+        top: 8.5%;
+    }
 
-.form-submit:active {
-    box-shadow: none;
-    transform: translateY(8px);
-}
+    .form-group.invalid .form-control {
+        border: 2px solid red;
+    }
+    .form-group.invalid .form-message {
+        color: red;
+        font-size: 1.1rem;
+        font-weight: 100;
+    }
 
-.spacer {
-    padding: 15px 0;
+    .form-submit {
+        font-family: 'Bagel Fat One' cursive !important;
+        position: absolute;
+        top: 82%;
+        right: 30%;
+        width: 36%;
+        height: 60px;
+        font-size: 1.2rem;
+        background: var(--button);
+        border-radius: 40px;
+        border: 1.5px black solid;
+        color: black;
+        cursor: pointer;
+        box-shadow: 0 6px 0 rgb(39, 170, 190);
+        transition: 0.1s linear;
+        outline: none;
+    }
+
+    .form-submit:active {
+        font-family: 'Bagel Fat One' cursive !important;
+        box-shadow: none;
+        transform: translateY(8px);
+    }
+
+    .spacer {
+        padding: 15px 0;
+    }
 }
