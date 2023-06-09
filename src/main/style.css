@@ -34,6 +34,7 @@ body {
     -webkit-transform: rotateX(-10deg);
     transform: rotateX(-10deg);
     z-index: 100;
+    text-align: center
 }
 
 #drag-container img,
@@ -184,4 +185,14 @@ ul {
     font-family: 'Dancing Script', cursive;
     font-family: 'Rampart One', cursive;
     font-size: 4vw;
+}
+
+@media screen and (min-width: 1080px) {
+  ul {
+    list-style: none;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Rampart One', cursive;
+    font-size: 2vw;
+    text-align: center
+  }
 }
