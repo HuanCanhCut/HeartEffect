@@ -53,7 +53,7 @@
         font-size: 1.4rem;
         color: var(--text-color);
         background: none;
-        border: 3px solid rgb(176, 79, 255);
+        border: 3px solid rgb(109, 181, 174);
         border-radius: 20px;
         outline: none;
         padding: 16px 20px;
@@ -93,7 +93,8 @@
     }
 
     .form-group.invalid .form-label {
-        background: rgb(255, 0, 195);
+        background: linear-gradient(to right bottom, rgb(255, 73, 240), rgb(255, 0, 0), rgb(128, 0, 255));
+        color: #0d1522;
     }
 
     .form-group.invalid .password__icon {
