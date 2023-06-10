@@ -91,6 +91,13 @@ function Validator(options) {
             } else {
                 selectorRules[rule.selector] = [rule.test]
             }
+            
+            let inputElement = document.querySelector(rule.selector)
+            inputElement.onblur = () => {
+                if (inputElement.value === '') {
+                    invalid(inputElement, rule)
+                }
+            }
         }
     }
 }
