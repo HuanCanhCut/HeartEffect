@@ -1,4 +1,3 @@
-
 //? password icon hide
 let passwordHide = document.querySelector('.password-hide')
 let iconHide = true
@@ -86,18 +85,11 @@ function Validator(options) {
         }
 
         for (let rule of arrayRules) {
-            //? Handle the case where there are many overlapping rules
-
+            //! Handle the case where there are many overlapping rules
             if (Array.isArray(selectorRules[rule.selector])) {
                 selectorRules[rule.selector].push(rule.test)
             } else {
                 selectorRules[rule.selector] = [rule.test]
-            }
-
-            let inputElement = document.querySelector(rule.selector)
-            //? blur handled
-            inputElement.onblur = function () {
-                invalid(inputElement, rule)
             }
         }
     }
