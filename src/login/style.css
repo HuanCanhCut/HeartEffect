@@ -3,7 +3,7 @@
     --background: linear-gradient(135deg, #a200ff, #0015ff);
     --button: linear-gradient(45deg, rgb(0, 221, 255), rgb(0, 255, 21));
     --text-color: #ffffff;
-    --success:rgb(0, 247, 255);
+    --success: rgb(0, 247, 255);
     --error: #ff0000;
     --color: #;
 }
@@ -22,7 +22,7 @@ body {
 
 * {
     box-sizing: border-box;
-    font-family: 'Bagel Fat One', cursive;
+    font-family: 'Bagel Fat One', cursive !important;
 }
 
 .heading {
@@ -74,7 +74,7 @@ body {
         font-size: 0.9rem;
         /* prettier-ignore */
         background-image: linear-gradient(45deg, rgb(0, 106, 255), rgba(0, 247, 255, 0.4), rgb(109, 53, 249)) ;
-        color: #0b1522;
+        color: #ffcc5d;
         border-radius: 5px;
         padding: 0 8px;
         position: absolute;
@@ -89,8 +89,7 @@ body {
         font-size: 1.1rem;
         color: var(--text-color);
         background: none;
-        /* border: 2px solid rgba(0, 255, 21, 0.8); */
-        border: 2px solid rgb(176, 79, 255);
+        border: 2px solid rgb(109, 181, 174);
         border-radius: 12px;
         outline: none;
         padding: 12px 10px 8px 12px;
@@ -128,13 +127,9 @@ body {
         border: 2px solid var(--success);
     }
 
-    .form-control:hover,
-    .form-control:active .form-label {
-        border: 2px solid var(--success);
-    }
-
     .form-group.invalid .form-label {
-        background: rgb(255, 0, 195);
+        background: linear-gradient(to right bottom, rgb(255, 73, 240), rgb(255, 0, 0), rgb(128, 0, 255));
+        color: #0d1522;
     }
 
     .form-group.invalid .password__icon {
