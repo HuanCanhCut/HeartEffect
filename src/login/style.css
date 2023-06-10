@@ -94,6 +94,7 @@ body {
         outline: none;
         padding: 12px 10px 8px 12px;
         box-sizing: border-box;
+        font-weight: 100;
     }
 
     .password-hide {
