@@ -1,29 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 :root {
     --background: linear-gradient(135deg, #a200ff, #0015ff);
     --button: linear-gradient(45deg, rgb(0, 221, 255), rgb(0, 255, 21));
-    --text-color: #ffffff;
-    --success: rgb(0, 247, 255);
+    --text-color: #fff;
+    --success: #00ddff;
     --error: #ff0000;
-    --color: #;
 }
 
 html,
 body {
     padding: 0;
     margin: 0;
-    width: 100vw;
     height: 100%;
     min-height: 100vh;
+    /* background-image: var(--background); */
     background-image: linear-gradient(135deg, gray, black);
     color: var(--text-color);
-    font-family: 'Bagel Fat One', cursive;
+    font-family: 'Bagel Fat One', cursive !important;
 }
 
 * {
     box-sizing: border-box;
-    font-family: 'Bagel Fat One', cursive !important;
 }
 
 .heading {
@@ -131,7 +130,7 @@ body {
     }
 
     .form-group.invalid .form-label {
-        background: linear-gradient(to right bottom, rgb(255, 73, 240), rgb(255, 0, 0), rgb(128, 0, 255));
+        background: linear-gradient(to right bottom, rgb(255, 73, 240), rgb(255, 92, 92), rgb(128, 0, 255));
         color: #0d1522;
     }
 
@@ -145,12 +144,16 @@ body {
     }
 
     .form-group.invalid .form-control {
-        border: 2px solid red;
+        border: 2px solid rgb(246, 77, 77);
     }
     .form-group.invalid .form-message {
-        color: red;
+        color: rgb(255, 72, 72);
         font-size: 1.1rem;
         font-weight: 100;
+    }
+
+    .form-group .form-submit {
+        font-family: 'Bagel Fat One' cursive !important ;
     }
 
     .form-submit {
