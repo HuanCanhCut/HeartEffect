@@ -95,7 +95,7 @@
     }
 
     .form-group.invalid .form-label {
-        background: linear-gradient(to right bottom, rgb(255, 73, 240), rgb(255, 0, 0), rgb(128, 0, 255));
+        background: linear-gradient(to right bottom, rgb(255, 73, 240), rgb(255, 101, 101), rgb(128, 0, 255));
         color: #0d1522;
     }
 
@@ -112,7 +112,7 @@
         border: 3px solid red;
     }
     .form-group.invalid .form-message {
-        color: red;
+        color: rgb(255, 97, 97);
         font-size: 1.2rem;
     }
 
