@@ -59,7 +59,8 @@
         padding: 16px 20px;
         box-sizing: border-box;
         transition: border 0.2 linear;
-        font-weight: 100
+        font-weight: 100;
+        font-family: 'Courgette', cursive !important;
     }
 
     .password-hide {
