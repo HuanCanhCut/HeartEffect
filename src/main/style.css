@@ -64,7 +64,7 @@ body {
 
 #drag-container ul {
     position: absolute;
-    width: 40vw;
+    width: 50vw;
     top: 100%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%) rotateX(90deg);
