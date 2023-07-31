@@ -9,8 +9,9 @@
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://onts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <link href="https:/fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <script src="../../../devtools.js"></script>
     </head>
     <body>
         <div id="drag-container">
@@ -30,11 +31,17 @@
         </div>
 
         <div id="music-container" class="music-container">
-            <i class="fas fa-play music-icon icon-play"></i>
-            <i class="fas fa-pause music-icon icon-pause"></i>
-            <audio class="audio" loop>
-                <source src="../../audio/suytnuathiorigin.mp3" />
-            </audio>
+            <div class="prev btn">
+                <i class="fa-solid fa-backward-step"></i>
+            </div>
+            <div class="play btn">
+                <i class="fas fa-play icon-play"></i>
+                <i class="fas fa-pause icon-pause"></i>
+            </div>
+            <div class="next btn">
+                <i class="fas fa-step-forward"></i>
+            </div>
+            <audio src="" class="audio"></audio>
         </div>
         <div id="canva">
             <canvas id="canvas"></canvas>
