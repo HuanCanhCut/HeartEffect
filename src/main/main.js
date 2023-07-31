@@ -1,4 +1,4 @@
-// You can change global variables here:
+ // You can change global variables here:
 var radius = 240 // how big of the radius
 var autoRotate = true // auto rotate or not
 var rotateSpeed = -60 // unit: seconds/360 degrees
@@ -66,32 +66,85 @@ if (autoRotate) {
 
 //? get Music Element
 let audio = document.querySelector('.audio')
-let musicContainer = document.querySelector('.music-container')
-let isPlay = false
+const playButton = document.querySelector('.play')
+const nextButton = document.querySelector('.next')
+const prevButton = document.querySelector('.prev')
 
 //! Handled when click music btn
 
-musicContainer.addEventListener('click', () => {
-    isPlay = !isPlay
-    isPlay ? audio.play() : audio.pause()
-})
+const app = {
+    currentIndex: 0,
+    isPlay: false,
+    songs: [
+        {
+            path: '../../audio/suytnuathiorigin.mp3',
+        },
+        {
+            path: '../../audio/chungtasaunay.mp3',
+        },
+    ],
 
-audio.onplay = function () {
-    musicContainer.classList.add('playing')
+    defineProperties: function () {
+        Object.defineProperty(this, 'currentSong', {
+            get: function () {
+                return this.songs[this.currentIndex]
+            },
+        })
+    },
+
+    loadCurrentSong: function () {
+        audio.setAttribute('src', this.currentSong.path)
+    },
+
+    handleEvent: function () {
+        const _this = this
+        playButton.onclick = function () {
+            this.isPlay = !this.isPlay
+            this.isPlay ? audio.play() : audio.pause()
+        }
+        audio.onplay = function () {
+            playButton.classList.add('playing')
+        }
+
+        audio.onpause = function () {
+            playButton.classList.remove('playing')
+        }
+
+        nextButton.onclick = function () {
+            _this.nextSong()
+            audio.play()
+        }
+
+        prevButton.onclick = function () {
+            _this.prevSong()
+            audio.play()
+        }
+    },
+
+    nextSong: function () {
+        this.currentIndex++
+        if (this.currentIndex >= this.songs.length) {
+            this.currentIndex = 0
+        }
+        this.loadCurrentSong()
+    },
+
+    prevSong: function () {
+        this.currentIndex--
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.songs.length - 1
+        }
+        this.loadCurrentSong()
+    },
+
+    start: function () {
+        this.defineProperties()
+        this.loadCurrentSong()
+        this.handleEvent()
+    },
 }
 
-audio.onpause = function () {
-    musicContainer.classList.remove('playing')
-}
-
-if (bgMusicURL) {
-    document.getElementById('music-container').innerHTML += `
-<audio src="${bgMusicURL}" ${bgMusicControls ? '' : ''} autoplay loop>    
-<p>If you are reading this, it is because your browser does not support the audio element.</p>
-</audio>
-`
-}
-
+app.start()
 // setup events
 document.onpointerdown = function (e) {
     clearInterval(odrag.timer)
