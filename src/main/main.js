@@ -67,19 +67,21 @@ if (autoRotate) {
 //? get Music Element
 let audio = document.querySelector('.audio')
 let musicContainer = document.querySelector('.music-container')
-let musicPlay = true
+let isPlay = false
 
-//? Handled when click music btn
-musicContainer.onclick = function () {
-    if (musicPlay === true) {
-        musicContainer.classList.add('playing')
-        audio.play()
-        musicPlay = false
-    } else {
-        musicContainer.classList.remove('playing')
-        audio.pause()
-        musicPlay = true
-    }
+//! Handled when click music btn
+
+musicContainer.addEventListener('click', () => {
+    isPlay = !isPlay
+    isPlay ? audio.play() : audio.pause()
+})
+
+audio.onplay = function () {
+    musicContainer.classList.add('playing')
+}
+
+audio.onpause = function () {
+    musicContainer.classList.remove('playing')
 }
 
 if (bgMusicURL) {
